@@ -45,6 +45,18 @@ public class CacheConfiguration {
             createCache(cm, br.com.dicommunitas.controleempregados.domain.User.class.getName());
             createCache(cm, br.com.dicommunitas.controleempregados.domain.Authority.class.getName());
             createCache(cm, br.com.dicommunitas.controleempregados.domain.User.class.getName() + ".authorities");
+            createCache(cm, br.com.dicommunitas.controleempregados.domain.Regiao.class.getName());
+            createCache(cm, br.com.dicommunitas.controleempregados.domain.Pais.class.getName());
+            createCache(cm, br.com.dicommunitas.controleempregados.domain.Localizacao.class.getName());
+            createCache(cm, br.com.dicommunitas.controleempregados.domain.Departamento.class.getName());
+            createCache(cm, br.com.dicommunitas.controleempregados.domain.Departamento.class.getName() + ".empregados");
+            createCache(cm, br.com.dicommunitas.controleempregados.domain.Tarefa.class.getName());
+            createCache(cm, br.com.dicommunitas.controleempregados.domain.Tarefa.class.getName() + ".trabalhos");
+            createCache(cm, br.com.dicommunitas.controleempregados.domain.Empregado.class.getName());
+            createCache(cm, br.com.dicommunitas.controleempregados.domain.Empregado.class.getName() + ".trabalhos");
+            createCache(cm, br.com.dicommunitas.controleempregados.domain.Trabalho.class.getName());
+            createCache(cm, br.com.dicommunitas.controleempregados.domain.Trabalho.class.getName() + ".tarefas");
+            createCache(cm, br.com.dicommunitas.controleempregados.domain.HistoricoDeTrabalho.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="empregado">
+            <h2><span jhiTranslate="controleEmpregadosApp.empregado.detail.title">Empregado</span> {{empregado.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="controleEmpregadosApp.empregado.primeiroNome" [ngbTooltip]="'controleEmpregadosApp.empregado.help.primeiroNome' | translate">Primeiro Nome</span></dt>
+                <dd>
+                    <span>{{empregado.primeiroNome}}</span>
+                </dd>
+                <dt><span jhiTranslate="controleEmpregadosApp.empregado.sobrenome">Sobrenome</span></dt>
+                <dd>
+                    <span>{{empregado.sobrenome}}</span>
+                </dd>
+                <dt><span jhiTranslate="controleEmpregadosApp.empregado.email">Email</span></dt>
+                <dd>
+                    <span>{{empregado.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="controleEmpregadosApp.empregado.telefone">Telefone</span></dt>
+                <dd>
+                    <span>{{empregado.telefone}}</span>
+                </dd>
+                <dt><span jhiTranslate="controleEmpregadosApp.empregado.dataContratacao">Data Contratacao</span></dt>
+                <dd>
+                    <span>{{empregado.dataContratacao}}</span>
+                </dd>
+                <dt><span jhiTranslate="controleEmpregadosApp.empregado.salario">Salario</span></dt>
+                <dd>
+                    <span>{{empregado.salario}}</span>
+                </dd>
+                <dt><span jhiTranslate="controleEmpregadosApp.empregado.comissao">Comissao</span></dt>
+                <dd>
+                    <span>{{empregado.comissao}}</span>
+                </dd>
+                <dt><span jhiTranslate="controleEmpregadosApp.empregado.gerente">Gerente</span></dt>
+                <dd>
+                    <div *ngIf="empregado.gerente">
+                        <a [routerLink]="['/empregado', empregado.gerente?.id, 'view']">{{empregado.gerente?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="controleEmpregadosApp.empregado.departamento">Departamento</span></dt>
+                <dd>
+                    <div *ngIf="empregado.departamento">
+                        <a [routerLink]="['/departamento', empregado.departamento?.id, 'view']">{{empregado.departamento?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/empregado', empregado.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

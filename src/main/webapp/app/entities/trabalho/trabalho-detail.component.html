@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="trabalho">
+            <h2><span jhiTranslate="controleEmpregadosApp.trabalho.detail.title">Trabalho</span> {{trabalho.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="controleEmpregadosApp.trabalho.titulo">Titulo</span></dt>
+                <dd>
+                    <span>{{trabalho.titulo}}</span>
+                </dd>
+                <dt><span jhiTranslate="controleEmpregadosApp.trabalho.salarioMinimo">Salario Minimo</span></dt>
+                <dd>
+                    <span>{{trabalho.salarioMinimo}}</span>
+                </dd>
+                <dt><span jhiTranslate="controleEmpregadosApp.trabalho.salarioMaximo">Salario Maximo</span></dt>
+                <dd>
+                    <span>{{trabalho.salarioMaximo}}</span>
+                </dd>
+                <dt><span jhiTranslate="controleEmpregadosApp.trabalho.tarefa">Tarefa</span></dt>
+                <dd>
+                    <span *ngFor="let tarefa of trabalho.tarefas; let last = last">
+                        <a [routerLink]="['/tarefa', tarefa?.id, 'view' ]">{{tarefa.titulo}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="controleEmpregadosApp.trabalho.empregado">Empregado</span></dt>
+                <dd>
+                    <div *ngIf="trabalho.empregado">
+                        <a [routerLink]="['/empregado', trabalho.empregado?.id, 'view']">{{trabalho.empregado?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/trabalho', trabalho.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

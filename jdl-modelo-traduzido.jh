@@ -1,0 +1,114 @@
+entity Regiao {
+	nome String
+}
+
+entity Pais {
+	nome String
+}
+
+// um comentário ignorado
+/** não é um comentário ignorado */
+entity Localizacao {
+	endereco String,
+	cep String,
+	cidade String,
+	bairro String
+}
+
+entity Departamento {
+	nome String required
+}
+
+/**
+ * Entidade Tarefa.
+ * @author Diego.
+ */
+entity Tarefa {
+	titulo String,
+	descricao String
+}
+
+/**
+ * Entidade Empregado.
+ */
+entity Empregado {
+	/**
+	* Atributo primeiroNome.
+	*/
+	primeiroNome String,
+	sobrenome String,
+	email String,
+	telefone String,
+	dataContratacao Instant,
+	salario Long,
+	comissao Long
+}
+
+entity Trabalho {
+	titulo String,
+	salarioMinimo Long,
+	salarioMaximo Long
+}
+
+entity HistoricoDeTrabalho {
+	dataInicial Instant,
+	dataFinal Instant,
+	lingua Lingua
+}
+
+enum Lingua {
+    PORTUGUESE, ENGLISH
+}
+
+relationship OneToOne {
+	Pais{regiao} to Regiao
+}
+
+relationship OneToOne {
+	Localizacao{pais} to Pais
+}
+
+relationship OneToOne {
+	Departamento{localizacao} to Localizacao
+}
+
+relationship ManyToMany {
+	Trabalho{tarefa(titulo)} to Tarefa{trabalho}
+}
+
+//definindo vários relacionamentos OneToMany com comentários
+relationship OneToMany {
+	Empregado{trabalho} to Trabalho,
+	/**
+	* Um relacionamento
+	*/
+	Departamento{empregado} to
+	/**
+	* Outro lado do mesmo relacionamento
+	*/
+	Empregado
+}
+
+relationship ManyToOne {
+	Empregado{gerente} to Empregado
+}
+
+// definindo vários relacionamentos oneToOne
+relationship OneToOne {
+	HistoricoDeTrabalho{trabalho} to Trabalho,
+	HistoricoDeTrabalho{departamento} to Departamento,
+	HistoricoDeTrabalho{empregado} to Empregado
+}
+
+// Definir opções de paginação
+paginate HistoricoDeTrabalho, Empregado with infinite-scroll
+paginate Trabalho with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Empregado, Trabalho
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

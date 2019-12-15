@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pais">
+            <h2><span jhiTranslate="controleEmpregadosApp.pais.detail.title">Pais</span> {{pais.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="controleEmpregadosApp.pais.nome">Nome</span></dt>
+                <dd>
+                    <span>{{pais.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="controleEmpregadosApp.pais.regiao">Regiao</span></dt>
+                <dd>
+                    <div *ngIf="pais.regiao">
+                        <a [routerLink]="['/regiao', pais.regiao?.id, 'view']">{{pais.regiao?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pais', pais.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

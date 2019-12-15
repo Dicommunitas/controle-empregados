@@ -1,0 +1,39 @@
+{
+    "name": "Departamento",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "localizacao",
+            "otherEntityRelationshipName": "departamento",
+            "relationshipName": "localizacao",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "empregado",
+            "otherEntityRelationshipName": "departamento",
+            "javadoc": "Um relacionamento",
+            "relationshipName": "empregado"
+        }
+    ],
+    "changelogDate": "20191215205204",
+    "entityTableName": "departamento",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

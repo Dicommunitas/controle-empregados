@@ -1,0 +1,68 @@
+{
+    "name": "Empregado",
+    "fields": [
+        {
+            "fieldName": "primeiroNome",
+            "javadoc": "Atributo primeiroNome.",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sobrenome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataContratacao",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "salario",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "comissao",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "trabalho",
+            "otherEntityRelationshipName": "empregado",
+            "relationshipName": "trabalho"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "empregado",
+            "otherEntityRelationshipName": "empregado",
+            "relationshipName": "gerente",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "departamento",
+            "otherEntityRelationshipName": "empregado",
+            "javadoc": "Outro lado do mesmo relacionamento",
+            "relationshipName": "departamento",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191215205206",
+    "javadoc": "Entidade Empregado.",
+    "entityTableName": "empregado",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

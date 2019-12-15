@@ -1,0 +1,25 @@
+{
+  "controleEmpregadosApp": {
+    "departamento": {
+      "home": {
+        "title": "Departamentos",
+        "createLabel": "Criar novo Departamento",
+        "createOrEditLabel": "Criar ou editar Departamento",
+        "search": "Pesquisar por Departamento",
+        "notFound": "Nenhum Departamento encontrado"
+      },
+      "created": "Um novo Departamento foi criado com o identificador {{ param }}",
+      "updated": "Um Departamento foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Departamento foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Departamento {{ id }}?"
+      },
+      "detail": {
+        "title": "Departamento"
+      },
+      "nome": "Nome",
+      "localizacao": "Localizacao",
+      "empregado": "Empregado"
+    }
+  }
+}

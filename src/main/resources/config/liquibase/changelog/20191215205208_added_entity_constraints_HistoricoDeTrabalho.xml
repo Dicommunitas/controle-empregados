@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity HistoricoDeTrabalho.
+    -->
+    <changeSet id="20191215205208-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="trabalho_id"
+                                 baseTableName="historico_de_trabalho"
+                                 constraintName="fk_historico_de_trabalho_trabalho_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="trabalho"/>
+
+        <addForeignKeyConstraint baseColumnNames="departamento_id"
+                                 baseTableName="historico_de_trabalho"
+                                 constraintName="fk_historico_de_trabalho_departamento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="departamento"/>
+
+        <addForeignKeyConstraint baseColumnNames="empregado_id"
+                                 baseTableName="historico_de_trabalho"
+                                 constraintName="fk_historico_de_trabalho_empregado_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="empregado"/>
+
+    </changeSet>
+</databaseChangeLog>

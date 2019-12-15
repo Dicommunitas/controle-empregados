@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-empregado-heading" jhiTranslate="controleEmpregadosApp.empregado.home.createOrEditLabel">Create or edit a Empregado</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="controleEmpregadosApp.empregado.primeiroNome" for="field_primeiroNome" [ngbTooltip]="'controleEmpregadosApp.empregado.help.primeiroNome' | translate">Primeiro Nome</label>
+                    <input type="text" class="form-control" name="primeiroNome" id="field_primeiroNome"
+                           formControlName="primeiroNome"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="controleEmpregadosApp.empregado.sobrenome" for="field_sobrenome">Sobrenome</label>
+                    <input type="text" class="form-control" name="sobrenome" id="field_sobrenome"
+                           formControlName="sobrenome"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="controleEmpregadosApp.empregado.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="controleEmpregadosApp.empregado.telefone" for="field_telefone">Telefone</label>
+                    <input type="text" class="form-control" name="telefone" id="field_telefone"
+                           formControlName="telefone"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="controleEmpregadosApp.empregado.dataContratacao" for="field_dataContratacao">Data Contratacao</label>
+                    <div class="d-flex">
+                        <input id="field_dataContratacao" type="datetime-local" class="form-control" name="dataContratacao" formControlName="dataContratacao" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="controleEmpregadosApp.empregado.salario" for="field_salario">Salario</label>
+                    <input type="number" class="form-control" name="salario" id="field_salario"
+                           formControlName="salario"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="controleEmpregadosApp.empregado.comissao" for="field_comissao">Comissao</label>
+                    <input type="number" class="form-control" name="comissao" id="field_comissao"
+                           formControlName="comissao"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="controleEmpregadosApp.empregado.gerente" for="field_gerente">Gerente</label>
+                    <select class="form-control" id="field_gerente" name="gerente" formControlName="gerente">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="empregadoOption.id === editForm.get('gerente').value?.id ? editForm.get('gerente').value : empregadoOption" *ngFor="let empregadoOption of empregados; trackBy: trackEmpregadoById">{{empregadoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="controleEmpregadosApp.empregado.departamento" for="field_departamento">Departamento</label>
+                    <select class="form-control" id="field_departamento" name="departamento" formControlName="departamento">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="departamentoOption.id === editForm.get('departamento').value?.id ? editForm.get('departamento').value : departamentoOption" *ngFor="let departamentoOption of departamentos; trackBy: trackDepartamentoById">{{departamentoOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

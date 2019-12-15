@@ -1,0 +1,24 @@
+{
+  "controleEmpregadosApp": {
+    "pais": {
+      "home": {
+        "title": "Pais",
+        "createLabel": "Criar novo Pais",
+        "createOrEditLabel": "Criar ou editar Pais",
+        "search": "Pesquisar por Pais",
+        "notFound": "Nenhum Pais encontrado"
+      },
+      "created": "Um novo Pais foi criado com o identificador {{ param }}",
+      "updated": "Um Pais foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Pais foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Pais {{ id }}?"
+      },
+      "detail": {
+        "title": "Pais"
+      },
+      "nome": "Nome",
+      "regiao": "Regiao"
+    }
+  }
+}

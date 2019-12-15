@@ -1,0 +1,27 @@
+{
+  "controleEmpregadosApp": {
+    "trabalho": {
+      "home": {
+        "title": "Trabalhos",
+        "createLabel": "Criar novo Trabalho",
+        "createOrEditLabel": "Criar ou editar Trabalho",
+        "search": "Pesquisar por Trabalho",
+        "notFound": "Nenhum Trabalho encontrado"
+      },
+      "created": "Um novo Trabalho foi criado com o identificador {{ param }}",
+      "updated": "Um Trabalho foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Trabalho foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Trabalho {{ id }}?"
+      },
+      "detail": {
+        "title": "Trabalho"
+      },
+      "titulo": "Titulo",
+      "salarioMinimo": "Salario Minimo",
+      "salarioMaximo": "Salario Maximo",
+      "tarefa": "Tarefa",
+      "empregado": "Empregado"
+    }
+  }
+}

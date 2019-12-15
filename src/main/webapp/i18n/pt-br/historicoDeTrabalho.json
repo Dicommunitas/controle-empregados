@@ -1,0 +1,28 @@
+{
+  "controleEmpregadosApp": {
+    "historicoDeTrabalho": {
+      "home": {
+        "title": "Historico De Trabalhos",
+        "createLabel": "Criar novo Historico De Trabalho",
+        "createOrEditLabel": "Criar ou editar Historico De Trabalho",
+        "search": "Pesquisar por Historico De Trabalho",
+        "notFound": "Nenhum Historico De Trabalho encontrado"
+      },
+      "created": "Um novo Historico De Trabalho foi criado com o identificador {{ param }}",
+      "updated": "Um Historico De Trabalho foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Historico De Trabalho foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Historico De Trabalho {{ id }}?"
+      },
+      "detail": {
+        "title": "Historico De Trabalho"
+      },
+      "dataInicial": "Data Inicial",
+      "dataFinal": "Data Final",
+      "lingua": "Lingua",
+      "trabalho": "Trabalho",
+      "departamento": "Departamento",
+      "empregado": "Empregado"
+    }
+  }
+}

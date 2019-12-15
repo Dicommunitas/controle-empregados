@@ -14,6 +14,20 @@
     <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191215205201_added_entity_Regiao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191215205202_added_entity_Pais.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191215205203_added_entity_Localizacao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191215205204_added_entity_Departamento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191215205205_added_entity_Tarefa.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191215205206_added_entity_Empregado.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191215205207_added_entity_Trabalho.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191215205208_added_entity_HistoricoDeTrabalho.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20191215205202_added_entity_constraints_Pais.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191215205203_added_entity_constraints_Localizacao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191215205204_added_entity_constraints_Departamento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191215205206_added_entity_constraints_Empregado.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191215205207_added_entity_constraints_Trabalho.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191215205208_added_entity_constraints_HistoricoDeTrabalho.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
