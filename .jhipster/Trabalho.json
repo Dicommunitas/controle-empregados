@@ -1,0 +1,44 @@
+{
+    "name": "Trabalho",
+    "fields": [
+        {
+            "fieldName": "titulo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "salarioMinimo",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "salarioMaximo",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "tarefa",
+            "otherEntityRelationshipName": "trabalho",
+            "relationshipName": "tarefa",
+            "otherEntityField": "titulo",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "empregado",
+            "otherEntityRelationshipName": "trabalho",
+            "relationshipName": "empregado",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191215205207",
+    "entityTableName": "trabalho",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

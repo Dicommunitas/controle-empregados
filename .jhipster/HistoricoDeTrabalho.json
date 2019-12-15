@@ -1,0 +1,54 @@
+{
+    "name": "HistoricoDeTrabalho",
+    "fields": [
+        {
+            "fieldName": "dataInicial",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "dataFinal",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "lingua",
+            "fieldType": "Lingua",
+            "fieldValues": "PORTUGUESE,ENGLISH"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "trabalho",
+            "otherEntityRelationshipName": "historicoDeTrabalho",
+            "relationshipName": "trabalho",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "departamento",
+            "otherEntityRelationshipName": "historicoDeTrabalho",
+            "relationshipName": "departamento",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "empregado",
+            "otherEntityRelationshipName": "historicoDeTrabalho",
+            "relationshipName": "empregado",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20191215205208",
+    "entityTableName": "historico_de_trabalho",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

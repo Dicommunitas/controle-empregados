@@ -1,0 +1,27 @@
+{
+  "controleEmpregadosApp": {
+    "trabalho": {
+      "home": {
+        "title": "Trabalhos",
+        "createLabel": "Create a new Trabalho",
+        "createOrEditLabel": "Create or edit a Trabalho",
+        "search": "Search for Trabalho",
+        "notFound": "No Trabalhos found"
+      },
+      "created": "A new Trabalho is created with identifier {{ param }}",
+      "updated": "A Trabalho is updated with identifier {{ param }}",
+      "deleted": "A Trabalho is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Trabalho {{ id }}?"
+      },
+      "detail": {
+        "title": "Trabalho"
+      },
+      "titulo": "Titulo",
+      "salarioMinimo": "Salario Minimo",
+      "salarioMaximo": "Salario Maximo",
+      "tarefa": "Tarefa",
+      "empregado": "Empregado"
+    }
+  }
+}

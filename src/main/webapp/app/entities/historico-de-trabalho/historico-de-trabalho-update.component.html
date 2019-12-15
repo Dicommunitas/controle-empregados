@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-historico-de-trabalho-heading" jhiTranslate="controleEmpregadosApp.historicoDeTrabalho.home.createOrEditLabel">Create or edit a Historico De Trabalho</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="controleEmpregadosApp.historicoDeTrabalho.dataInicial" for="field_dataInicial">Data Inicial</label>
+                    <div class="d-flex">
+                        <input id="field_dataInicial" type="datetime-local" class="form-control" name="dataInicial" formControlName="dataInicial" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="controleEmpregadosApp.historicoDeTrabalho.dataFinal" for="field_dataFinal">Data Final</label>
+                    <div class="d-flex">
+                        <input id="field_dataFinal" type="datetime-local" class="form-control" name="dataFinal" formControlName="dataFinal" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="controleEmpregadosApp.historicoDeTrabalho.lingua" for="field_lingua">Lingua</label>
+                    <select class="form-control" name="lingua" formControlName="lingua" id="field_lingua">
+                        <option value="PORTUGUESE">{{'controleEmpregadosApp.Lingua.PORTUGUESE' | translate}}</option>
+                        <option value="ENGLISH">{{'controleEmpregadosApp.Lingua.ENGLISH' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="controleEmpregadosApp.historicoDeTrabalho.trabalho" for="field_trabalho">Trabalho</label>
+                    <select class="form-control" id="field_trabalho" name="trabalho" formControlName="trabalho">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="trabalhoOption.id === editForm.get('trabalho').value?.id ? editForm.get('trabalho').value : trabalhoOption" *ngFor="let trabalhoOption of trabalhos; trackBy: trackTrabalhoById">{{trabalhoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="controleEmpregadosApp.historicoDeTrabalho.departamento" for="field_departamento">Departamento</label>
+                    <select class="form-control" id="field_departamento" name="departamento" formControlName="departamento">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="departamentoOption.id === editForm.get('departamento').value?.id ? editForm.get('departamento').value : departamentoOption" *ngFor="let departamentoOption of departamentos; trackBy: trackDepartamentoById">{{departamentoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="controleEmpregadosApp.historicoDeTrabalho.empregado" for="field_empregado">Empregado</label>
+                    <select class="form-control" id="field_empregado" name="empregado" formControlName="empregado">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="empregadoOption.id === editForm.get('empregado').value?.id ? editForm.get('empregado').value : empregadoOption" *ngFor="let empregadoOption of empregados; trackBy: trackEmpregadoById">{{empregadoOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

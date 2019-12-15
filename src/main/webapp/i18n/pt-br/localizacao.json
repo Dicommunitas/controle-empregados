@@ -1,0 +1,27 @@
+{
+  "controleEmpregadosApp": {
+    "localizacao": {
+      "home": {
+        "title": "Localizacaos",
+        "createLabel": "Criar novo Localizacao",
+        "createOrEditLabel": "Criar ou editar Localizacao",
+        "search": "Pesquisar por Localizacao",
+        "notFound": "Nenhum Localizacao encontrado"
+      },
+      "created": "Um novo Localizacao foi criado com o identificador {{ param }}",
+      "updated": "Um Localizacao foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Localizacao foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Localizacao {{ id }}?"
+      },
+      "detail": {
+        "title": "Localizacao"
+      },
+      "endereco": "Endereco",
+      "cep": "Cep",
+      "cidade": "Cidade",
+      "bairro": "Bairro",
+      "pais": "Pais"
+    }
+  }
+}

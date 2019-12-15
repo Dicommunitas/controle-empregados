@@ -1,0 +1,35 @@
+{
+  "controleEmpregadosApp": {
+    "empregado": {
+      "home": {
+        "title": "Empregados",
+        "createLabel": "Criar novo Empregado",
+        "createOrEditLabel": "Criar ou editar Empregado",
+        "search": "Pesquisar por Empregado",
+        "notFound": "Nenhum Empregado encontrado"
+      },
+      "created": "Um novo Empregado foi criado com o identificador {{ param }}",
+      "updated": "Um Empregado foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Empregado foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Empregado {{ id }}?"
+      },
+      "detail": {
+        "title": "Empregado"
+      },
+      "primeiroNome": "Primeiro Nome",
+      "sobrenome": "Sobrenome",
+      "email": "Email",
+      "telefone": "Telefone",
+      "dataContratacao": "Data Contratacao",
+      "salario": "Salario",
+      "comissao": "Comissao",
+      "trabalho": "Trabalho",
+      "gerente": "Gerente",
+      "departamento": "Departamento",
+      "help": {
+        "primeiroNome": "Atributo primeiroNome."
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "controleEmpregadosApp": {
+    "regiao": {
+      "home": {
+        "title": "Regiaos",
+        "createLabel": "Create a new Regiao",
+        "createOrEditLabel": "Create or edit a Regiao",
+        "search": "Search for Regiao",
+        "notFound": "No Regiaos found"
+      },
+      "created": "A new Regiao is created with identifier {{ param }}",
+      "updated": "A Regiao is updated with identifier {{ param }}",
+      "deleted": "A Regiao is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Regiao {{ id }}?"
+      },
+      "detail": {
+        "title": "Regiao"
+      },
+      "nome": "Nome"
+    }
+  }
+}
